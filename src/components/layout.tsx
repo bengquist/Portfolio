@@ -13,7 +13,7 @@ import Header from "./header"
 import Navigation from "./Navigation"
 
 type Props = {
-  headerTitle: string
+  headerTitle?: string
 }
 
 const Layout: React.FC<Props> = ({ children, headerTitle }) => {
@@ -33,7 +33,7 @@ const Layout: React.FC<Props> = ({ children, headerTitle }) => {
       <GlobalStyle />
       <Container>
         <Inner>
-          <Header siteTitle={headerTitle} />
+          <Header siteTitle={headerTitle || data.site.siteMetadata.title} />
           <Body>{children}</Body>
           <Navigation />
         </Inner>
