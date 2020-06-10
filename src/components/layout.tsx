@@ -11,6 +11,7 @@ import React from "react"
 import styled from "styled-components"
 import GlobalStyle from "./GlobalStyle"
 import Header from "./header"
+import Navigation from "./Navigation"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
         <Inner>
           <Header siteTitle={data.site.siteMetadata.title} />
           <Body>{children}</Body>
+          <Navigation />
         </Inner>
       </Container>
     </>
@@ -49,16 +51,14 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 `
 
 const Inner = styled.main`
   background: #252734;
   width: 100%;
   height: 100%;
-  max-width: 1000px;
-  max-height: 700px;
   border-radius: 10px;
-  overflow: hidden;
 `
 
 const Body = styled.div`
