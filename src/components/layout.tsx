@@ -59,8 +59,14 @@ const Inner = styled.main`
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 `
 
 const Body = styled.div`
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  transform: translateY(-50px);
 `

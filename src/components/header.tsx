@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
@@ -8,20 +7,16 @@ type Props = {
 
 const Header: React.FC<Props> = ({ siteTitle }) => (
   <Container>
-    <h1>
-      <Link to="/">{siteTitle}</Link>
-    </h1>
+    <h2>{siteTitle}</h2>
   </Container>
 )
 
 export default Header
 
 const Container = styled.header`
+  width: 100%;
   text-align: center;
   padding: 1rem;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  color: white;
+  text-decoration: none;
 `

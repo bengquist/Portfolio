@@ -4,7 +4,6 @@ import {
   faToolbox,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import NavigationItem from "./NavigationItem"
@@ -12,18 +11,10 @@ import NavigationItem from "./NavigationItem"
 export default function Navigation() {
   return (
     <Container>
-      <Link to="/skills/">
-        <NavigationItem icon={faUserCircle} />
-      </Link>
-      <Link to="/skills/">
-        <NavigationItem icon={faToolbox} />
-      </Link>
-      <Link to="/skills/">
-        <NavigationItem icon={faImages} />
-      </Link>
-      <Link to="/skills/">
-        <NavigationItem icon={faEnvelope} />
-      </Link>
+      <NavigationItem icon={faUserCircle} to="/" />
+      <NavigationItem icon={faToolbox} to="/skills" />
+      <NavigationItem icon={faImages} to="/projects" />
+      <NavigationItem icon={faEnvelope} to="/contact" />
     </Container>
   )
 }

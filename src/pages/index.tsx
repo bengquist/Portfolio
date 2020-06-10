@@ -9,13 +9,16 @@ const IndexPage = () => (
     <SEO title="about" />
 
     <Container>
-      <ProfileImage />
+      <ImageContainer>
+        <ProfileImage />
+      </ImageContainer>
       <Info>
         <h1>Full Stack Developer</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad tempore
-          voluptates recusandae veritatis earum cum error nisi laudantium ipsa
-          unde.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
+          voluptates optio. Unde neque sit molestiae accusamus esse fugit quidem
+          cupiditate ipsum reprehenderit, adipisci aliquid aperiam assumenda
+          doloremque temporibus repellat consectetur.
         </p>
       </Info>
     </Container>
@@ -24,11 +27,21 @@ const IndexPage = () => (
 
 export default IndexPage
 
-const Logo = styled.div``
-
 const Container = styled.div`
-  max-width: 300px;
+  max-width: 800px;
   display: flex;
+  margin: auto;
 `
 
-const Info = styled.section``
+const ImageContainer = styled.div`
+  width: 1000px;
+  margin-right: 100px;
+`
+
+const Info = styled.section`
+  color: white;
+
+  > h1 {
+    margin-bottom: 1.5rem;
+  }
+`
