@@ -123,6 +123,10 @@ export default createGlobalStyle`
   input {
     overflow: visible;
   }
+  button {
+    border: none;
+    cursor: pointer;
+  }
   button,
   select {
     text-transform: none;

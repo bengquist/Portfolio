@@ -6,14 +6,17 @@
  */
 
 import { graphql, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import GlobalStyle from "./GlobalStyle"
 import Header from "./header"
 import Navigation from "./Navigation"
 
-const Layout = ({ children }) => {
+type Props = {
+  headerTitle: string
+}
+
+const Layout: React.FC<Props> = ({ children, headerTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,17 +33,13 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Container>
         <Inner>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle={headerTitle} />
           <Body>{children}</Body>
           <Navigation />
         </Inner>
       </Container>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
@@ -51,10 +50,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem;
 `
 
 const Inner = styled.main`
+  position: relative;
   background: #252734;
   width: 100%;
   height: 100%;
