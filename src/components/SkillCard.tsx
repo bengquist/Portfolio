@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { lighterGray, yellow } from "../style/colors"
 
 type Props = {
   title: string
@@ -18,6 +19,12 @@ const SkillCard = ({
     <Container>
       <Title>{title}</Title>
       <Description>{description}</Description>
+      <ListContainer>
+        <ListTitle>{listTitle}</ListTitle>
+        {list.map(skill => (
+          <p>{skill}</p>
+        ))}
+      </ListContainer>
     </Container>
   )
 }
@@ -25,10 +32,20 @@ const SkillCard = ({
 export default SkillCard
 
 const Container = styled.div`
-  background: #424657;
+  background: ${lighterGray};
+  color: white;
   border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
 `
 
-const Title = styled.h2``
+const Title = styled.h3``
 
 const Description = styled.p``
+
+const ListContainer = styled.div``
+
+const ListTitle = styled.h5`
+  color: ${yellow};
+`

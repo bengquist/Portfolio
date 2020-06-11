@@ -8,7 +8,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import GlobalStyle from "./GlobalStyle"
+import GlobalStyle from "../style/GlobalStyle"
 import Header from "./header"
 import Navigation from "./Navigation"
 

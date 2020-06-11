@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import { lighterGray, yellow } from "../style/colors"
 
 type Props = {
   icon: IconProp
@@ -11,7 +12,7 @@ type Props = {
 
 const NavigationItem: React.FC<Props> = ({ icon, to }) => {
   return (
-    <Container to={to} activeStyle={{ color: "#ffc25c" }}>
+    <Container to={to} activeStyle={{ color: yellow }}>
       <FontAwesomeIcon icon={icon} size="2x" />
     </Container>
   )
@@ -23,7 +24,7 @@ const Container = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #424657;
+  background: ${lighterGray};
   width: 80px;
   height: 80px;
   border-radius: 50%;
